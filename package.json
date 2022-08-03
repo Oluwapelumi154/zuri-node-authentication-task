@@ -1,0 +1,46 @@
+{
+  "name": "zuri-node-authentication-task",
+  "version": "1.0.0",
+  "description": "user authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oluwapelumi154/zuri-node-authentication-task.git"
+  },
+  "keywords": [
+    "user"
+  ],
+  "author": "Orebayo Oluwapelumi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oluwapelumi154/zuri-node-authentication-task/issues"
+  },
+  "homepage": "https://github.com/Oluwapelumi154/zuri-node-authentication-task#readme",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.0",
+    "morgan": "^1.10.0",
+    "prettier": "^2.7.1"
+  }
+}
