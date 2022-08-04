@@ -1,1 +1,1 @@
-const resetPasswordMail = () => ``;
+const resetPasswordMail = () => '';
