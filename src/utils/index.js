@@ -1,6 +1,7 @@
 const response = require('./response');
 const bcrypt = require('./hash');
-const jwt = require('./token');
+const token = require('./token');
+const mail = require('./mail');
 
 module.exports = Object.freeze({
   /** Response */
@@ -14,5 +15,9 @@ module.exports = Object.freeze({
   hashPassword: bcrypt.hashPassword,
   comparePassword: bcrypt.comparePassword,
 
-  signJWT: jwt.signJWT
+  signJWT: token.signJWT,
+  generateToken: token.generateToken,
+  verifyJWT: token.verifyJWT,
+  compareTime: token.compareTime,
+  sendEmail: mail.sendEmail
 });
