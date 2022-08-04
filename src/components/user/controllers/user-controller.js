@@ -1,9 +1,9 @@
 const { authResponseMsg, errorResponseMsg } = require('../../../utils');
-const { adminService } = require('../services');
+const { userService } = require('../services');
 
-exports.createAdmin = async (req, res) => {
+exports.createUser = async (req, res) => {
   const { body } = req;
-  const { status, statusCode, message, data } = await adminService.create(body);
+  const { status, statusCode, message, data } = await userService.create(body);
   if (statusCode === 201) {
     return authResponseMsg(res, status, statusCode, message, data);
   }

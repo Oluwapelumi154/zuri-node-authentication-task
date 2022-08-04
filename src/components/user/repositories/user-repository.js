@@ -6,6 +6,6 @@ exports.create = async (data) => {
 };
 
 exports.findByEmail = async (email) => {
-  const user = await userModel.findOne(email);
+  const user = await userModel.findOne({ email });
   return user;
 };

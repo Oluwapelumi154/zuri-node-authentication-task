@@ -1,9 +1,20 @@
 {
   "extends": ["prettier", "airbnb-base", "plugin:node/recommended"],
-  "plugin": ["prettier"],
+  "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "off",
     "no-unused-vars": "warn",
-    "global-require": "off"
+    "global-require": "off",
+    "lines-between-class-members": "warn",
+    "linebreak-style": "off",
+    "comma-dangle": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-dupe-keys": "off",
+    "consistent-return": "off",
+    "object-curly-newline": "off",
+    "node/no-unsupported-features/es-syntax": 0,
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "operator-linebreak": "off"
   }
 }
