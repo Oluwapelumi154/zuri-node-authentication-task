@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { validate } = require('../../../middlewares');
-const { authenticateStaff } = require('../../auth/controllers/auth-controller');
+const { loginStaff } = require('../../auth/controllers');
 const { createUser } = require('../controllers');
 const { staffToCreate } = require('../schema');
-const { staffToLogin } = require('../schema/schema');
+const { staffToLogin } = require('../schema/staff-schema');
 
 router.post('/register', validate(staffToCreate()), createUser);
-router.post('/login', validate(staffToLogin()), authenticateStaff);
+router.post('/login', validate(staffToLogin()), loginStaff);
 module.exports = router;

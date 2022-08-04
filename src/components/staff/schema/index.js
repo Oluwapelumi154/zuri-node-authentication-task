@@ -1,4 +1,4 @@
-const schema = require('./schema');
+const schema = require('./staff-schema');
 
 module.exports = Object.freeze({
   /** Schema */

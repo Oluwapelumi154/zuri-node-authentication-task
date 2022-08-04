@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 const express = require('express');
 const compression = require('compression');
 const morgan = require('morgan');
@@ -13,8 +13,8 @@ app.use('/api', apis);
 app.use('*', (req, res) =>
   errorResponseMsg(
     res,
-    404,
     'fail',
+    404,
     `Can't find ${req.originalUrl} on this server`
   )
 );

@@ -1,7 +1,9 @@
-const schema = require('./schema');
+const schema = require('./user-schema');
 
 module.exports = Object.freeze({
   /** Schema */
   userToCreate: schema.userToCreate,
-  userToLogin: schema.userToLogin
+  userToLogin: schema.userToLogin,
+  userEmail: schema.userEmail,
+  userId: schema.userId
 });

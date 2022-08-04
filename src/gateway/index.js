@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { staffRoute } = require('../components/staff-manager/routes');
+const { staffRoute } = require('../components/staff/routes');
 const { adminRoute } = require('../components/admin/routes');
 const { userRoute } = require('../components/user/routes');
 

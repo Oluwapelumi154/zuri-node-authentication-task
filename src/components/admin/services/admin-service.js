@@ -16,8 +16,9 @@ class adminService {
       const admin = {
         ...body
       };
-      const token = signJWT(admin._id, admin.email);
       const newAdmin = await adminRepository.create(admin);
+      const token = signJWT(newAdmin.id, newAdmin.email);
+
       return serviceResponse('success', 201, 'Succesfully Created a User', {
         token,
         user: newAdmin

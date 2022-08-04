@@ -1,4 +1,8 @@
-const { authResponseMsg, errorResponseMsg } = require('../../../utils');
+const {
+  authResponseMsg,
+  errorResponseMsg,
+  successResponseMsg
+} = require('../../../utils');
 const { authService } = require('../services');
 
 exports.authenticateUser = async (req, res) => {
@@ -13,6 +17,53 @@ exports.authenticateUser = async (req, res) => {
   }
 };
 
+exports.forgotUserPassword = async (req, res) => {
+  const { body } = req;
+  const { status, statusCode, message, data } =
+    await authService.forgotUserPassword(body);
+  if (statusCode === 200) {
+    return successResponseMsg(res, status, statusCode, message, data);
+  }
+  if (statusCode >= 400) {
+    return errorResponseMsg(res, status, statusCode, message);
+  }
+};
+
+exports.forgotStaffPassword = async (req, res) => {
+  const { body } = req;
+  const { status, statusCode, message, data } =
+    await authService.forgotStaffPassword(body);
+  if (statusCode === 200) {
+    return successResponseMsg(res, status, statusCode, message, data);
+  }
+  if (statusCode >= 400) {
+    return errorResponseMsg(res, status, statusCode, message);
+  }
+};
+
+exports.resetUserPassword = async (req, res) => {
+  const { query, body } = req;
+  const { status, statusCode, message, data } =
+    await authService.resetUserPassword(query, body);
+  if (statusCode === 200) {
+    return authResponseMsg(res, status, statusCode, message, data);
+  }
+  if (statusCode >= 400) {
+    return errorResponseMsg(res, status, statusCode, message);
+  }
+};
+
+exports.resetStaffPassword = async (req, res) => {
+  const { query, body } = req;
+  const { status, statusCode, message, data } =
+    await authService.resetStaffPassword(query, body);
+  if (statusCode === 200) {
+    return authResponseMsg(res, status, statusCode, message, data);
+  }
+  if (statusCode >= 400) {
+    return errorResponseMsg(res, status, statusCode, message);
+  }
+};
 exports.authenticateAdmin = async (req, res) => {
   const { body } = req;
   const { status, statusCode, message, data } =
@@ -31,6 +82,19 @@ exports.authenticateStaff = async (req, res) => {
     await authService.authenticateStaff(body);
   if (statusCode === 200) {
     return authResponseMsg(res, status, statusCode, message, data);
+  }
+  if (statusCode >= 400) {
+    return errorResponseMsg(res, status, statusCode, message);
+  }
+};
+
+exports.isAuthenticated = async (req, res, next) => {
+  const { headers } = req;
+  const { status, statusCode, message, data } =
+    await authService.isAdminAuthenticated(headers);
+  if (statusCode === 200) {
+    req.user = data;
+    return next();
   }
   if (statusCode >= 400) {
     return errorResponseMsg(res, status, statusCode, message);
