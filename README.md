@@ -1,7 +1,7 @@
-# zuri-node-authentication-task
+# Node-Authentication
 
 
-# User Endpoints
+# user endpoints
 
 
 ![user-register](https://user-images.githubusercontent.com/63658565/183083637-d97693dd-dcba-4b76-8bfe-c4bc181cace0.png)
@@ -16,7 +16,7 @@
 ![forget-user](https://user-images.githubusercontent.com/63658565/183083629-d74c01ce-be1f-4c33-b35c-58aeafa2163c.png)
 
 
-# Staff Endpoints
+# staff endpoints
 
 ![staff-register](https://user-images.githubusercontent.com/63658565/183083624-7e324c05-0936-4fe7-9a68-b9e1c0cdfbdd.png)
 
@@ -34,7 +34,7 @@
 
 
 
-# Admin Endpoints
+# admin endpoints
 
 ![register-admin](https://user-images.githubusercontent.com/63658565/183083618-1e911078-67c1-4aff-aa99-0021fb5307b4.png)
 
