@@ -9,7 +9,7 @@ const {
 } = require('../../../utils');
 const { hashToken } = require('../../../utils/token');
 const { adminRepository } = require('../../admin/repositories');
-const { staffRepository } = require('../../staff-manager/repositories');
+const { staffRepository } = require('../../staff/repositories');
 const { userRepository } = require('../../user/repositories');
 const { sendEmail } = require('../../../utils');
 
@@ -98,23 +98,23 @@ class authService {
       if (!user) {
         return serviceResponse('fail', 400, 'Incorrect Email');
       }
-      const { resetToken, hashedResetToken } = generateToken();
+      const { token, hashedToken } = generateToken();
       const updatedUser = await userRepository.update(body.email, {
-        resetToken: hashedResetToken,
+        resetToken: hashedToken,
         resetTokenExpiresAt: Date.now() + 10 * 60 * 1000
       });
 
-      const URL = `http://127.0.0.01:8000/api/user/resetPassword/${resetToken}`;
-      await sendEmail({
-        to: user.email,
-        subject: 'passowrd reset token is only valid for 10minutes',
-        text: `${URL}`
-      });
+      const URL = `http://127.0.0.01:8000/api/user/resetPassword/${token}`;
+      // await sendEmail({
+      //   to: user.email,
+      //   subject: 'passowrd reset token is only valid for 10minutes',
+      //   text: `${URL}`
+      // });
       return serviceResponse(
         'success',
         200,
         'reset token has been sent to your mail',
-        { resetToken, user: updatedUser }
+        { user: updatedUser }
       );
     } catch (err) {
       return serviceResponse('fail', 500, 'Internal Server Error');
@@ -142,24 +142,24 @@ class authService {
       if (!user) {
         return serviceResponse('fail', 400, 'Incorrect Email');
       }
-      const { resetToken, hashedResetToken } = generateToken();
+      const { token, hashedToken } = generateToken();
       const updatedUser = await staffRepository.update(body.email, {
-        resetToken: hashedResetToken,
+        resetToken: hashedToken,
         resetTokenExpiresAt: Date.now() + 10 * 60 * 1000,
         passwordChangedAt: Date.now()
       });
 
-      const URL = `http://127.0.0.01:8000/api/staff/resetPassword/${resetToken}`;
-      await sendEmail({
-        to: user.email,
-        subject: 'passowrd reset token is only valid for 10minutes',
-        text: `${URL}`
-      });
+      const URL = `http://127.0.0.01:8000/api/staff/resetPassword/${token}`;
+      // await sendEmail({
+      //   to: user.email,
+      //   subject: 'passowrd reset token is only valid for 10minutes',
+      //   text: `${URL}`
+      // });
       return serviceResponse(
         'success',
         200,
         'reset token has been sent to your mail',
-        { resetToken, user: updatedUser }
+        { token, user: updatedUser }
       );
     } catch (err) {
       return serviceResponse('fail', 500, 'Internal Server Error');

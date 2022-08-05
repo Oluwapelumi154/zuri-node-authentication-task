@@ -27,14 +27,16 @@ const userSchema = new Schema(
       required: true,
       default: 'user'
     },
-    resetToken: String,
     verified: {
       type: String,
       required: true,
       default: false
     },
-    passwordChangedAt: Date,
-    resetTokenExpiresAt: Date
+    verificationToken: String,
+    verificationTokenExpiresAt: Date,
+    resetToken: String,
+    resetTokenExpiresAt: Date,
+    passwordChangedAt: Date
   },
   { timestamps: true }
 );

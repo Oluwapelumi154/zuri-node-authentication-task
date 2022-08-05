@@ -26,6 +26,13 @@ exports.findByToken = async (resetToken) => {
   return user;
 };
 
+exports.findByVerificationToken = async (verificationToken) => {
+  const user = await userModel.findOne({
+    verificationToken,
+    verificationTokenExpiresAt: { $gt: Date.now() }
+  });
+  return user;
+};
 exports.findById = async (userId) => {
   const user = await userModel.findById(userId);
   return user;

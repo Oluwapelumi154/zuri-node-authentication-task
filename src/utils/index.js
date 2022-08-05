@@ -19,5 +19,7 @@ module.exports = Object.freeze({
   generateToken: token.generateToken,
   verifyJWT: token.verifyJWT,
   compareTime: token.compareTime,
-  sendEmail: mail.sendEmail
+  sendEmail: mail.sendEmail,
+  setCookie: response.setCookie,
+  removeCookie: response.removeCookie
 });

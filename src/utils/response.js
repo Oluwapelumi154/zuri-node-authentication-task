@@ -13,6 +13,19 @@ exports.authResponseMsg = (res, status, statusCode, message, data) =>
     data
   });
 
+exports.setCookie = (res, token) =>
+  res.cookie('jwt', token, {
+    expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
+    httpOnly: true
+  });
+
+exports.removeCookie = (res, token) => {
+  res.cookie('jwt', token, {
+    expires: new Date(Date.now() + 10 * 1000),
+    httpOnly: true
+  });
+};
+
 exports.successReponseMsg = (res, status, statusCode, message, data) =>
   res.status(statusCode).json({
     status,

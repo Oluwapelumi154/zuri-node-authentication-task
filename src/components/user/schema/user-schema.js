@@ -13,6 +13,8 @@ module.exports = {
     check('role').not().exists(),
     check('verified').not().exists(),
     check('resetTokenExpiresAt').not().exists(),
+    check('verificationToken').not().exists(),
+    check('verificationTokenExpiresAt').not().exists(),
     check('resetToken').not().exists(),
     body('password').trim().notEmpty().withMessage('This is a required field')
   ],
@@ -39,5 +41,8 @@ module.exports = {
       .isMongoId()
       .withMessage('Invalid Id')
       .withMessage('This is a required field')
+  ],
+  userToUpdate: () => [
+    body('password').trim().notEmpty().withMessage('This is a required field')
   ]
 };

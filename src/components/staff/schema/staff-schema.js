@@ -26,5 +26,16 @@ module.exports = {
       .notEmpty()
       .withMessage('This is a required field'),
     body('password').trim().notEmpty().withMessage('This is a required field')
+  ],
+  staffEmail: () => [
+    body('email')
+      .trim()
+      .isEmail()
+      .withMessage('Invalid Email')
+      .notEmpty()
+      .withMessage('This is a required field')
+  ],
+  staffToUpdate: () => [
+    body('password').trim().notEmpty().withMessage('This is a required field')
   ]
 };

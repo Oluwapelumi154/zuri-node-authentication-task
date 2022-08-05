@@ -5,5 +5,6 @@ module.exports = Object.freeze({
   userToCreate: schema.userToCreate,
   userToLogin: schema.userToLogin,
   userEmail: schema.userEmail,
-  userId: schema.userId
+  userId: schema.userId,
+  userToUpdate: schema.userToUpdate
 });

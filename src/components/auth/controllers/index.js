@@ -8,5 +8,6 @@ module.exports = Object.freeze({
   forgotStaffPassword: authController.forgotStaffPassword,
   loginStaff: authController.authenticateStaff,
   loginAdmin: authController.authenticateAdmin,
-  isAuthenticated: authController.isAuthenticated
+  isAuthenticated: authController.isAuthenticated,
+  logOut: authController.logOut
 });
