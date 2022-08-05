@@ -3,15 +3,18 @@
 
 # user endpoints
 
+# register admin
 
 ![user-register](https://user-images.githubusercontent.com/63658565/183083637-d97693dd-dcba-4b76-8bfe-c4bc181cace0.png)
 
+# authenticate a user
 
 ![user-login](https://user-images.githubusercontent.com/63658565/183083615-18dd793d-0a41-48f7-b9fd-d8042e51c6a1.png)
 
-
+# email to reset password
 ![forget-user](https://user-images.githubusercontent.com/63658565/183083629-d74c01ce-be1f-4c33-b35c-58aeafa2163c.png)
 
+# reset user password
 
 ![reset-user](https://user-images.githubusercontent.com/63658565/183083591-2d5bfc93-6132-4cd3-8eec-c1b45a7a6229.png)
 
