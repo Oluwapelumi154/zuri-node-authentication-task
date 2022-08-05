@@ -49,7 +49,6 @@
 ![log-out-admin](https://user-images.githubusercontent.com/63658565/183083596-1998c8fc-65dc-4b03-b73b-b7948f9ad678.png)
 
 
-![set-cookie](https://user-images.githubusercontent.com/63658565/183083582-92433c29-cf72-4545-bb9d-f7e44d5d155e.png)
 
 
 # Admin Retrieves all User
