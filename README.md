@@ -3,7 +3,6 @@
 
 # User Endpoints
 
-# Authenticate a user
 
 ![user-register](https://user-images.githubusercontent.com/63658565/183083637-d97693dd-dcba-4b76-8bfe-c4bc181cace0.png)
 
@@ -23,6 +22,9 @@
 
 
 ![login-staff](https://user-images.githubusercontent.com/63658565/183083608-2a41d5b9-fc81-4def-a41c-d341a59568d1.png)
+
+
+![forget-staff](https://user-images.githubusercontent.com/63658565/183083627-ddb22c62-2654-4df9-a996-682fb24c16c5.png)
 
 
 ![reset-staff-password](https://user-images.githubusercontent.com/63658565/183083589-aad5f252-617c-42bf-86eb-c87c24c6ed65.png)
@@ -70,7 +72,6 @@
 
 
 
-![forget-staff](https://user-images.githubusercontent.com/63658565/183083627-ddb22c62-2654-4df9-a996-682fb24c16c5.png)
 
 
 
